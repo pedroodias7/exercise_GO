@@ -24,6 +24,7 @@ func main() {
 	r.GET("/tasks", GetTasks)
 	r.POST("/tasks", addTask)
 	r.PUT("/tasks/:id", updateTaks)
+	r.DELETE("tasks/:id", deleteTasks)
 
 	r.Run(":8080")
 }
@@ -84,4 +85,29 @@ func updateTaks(c *gin.Context) {
 
 	// Return the updated post
 	c.JSON(http.StatusOK, gin.H{"Message": "Post updated successfully", "Post": updatePost})
+}
+
+func deleteTasks(c *gin.Context) {
+	id := c.Param("id")
+
+	var deletedPost Post
+	postFound := false
+
+	for i, post := range posts {
+		if post.ID == id {
+			deletedPost = posts[i]
+			posts = append(posts[:i], posts[i+1:]...)
+			c.JSON(http.StatusOK, gin.H{"Message": "Post delete with suceess"})
+			return
+		}
+		postFound = true
+		break
+	}
+
+	if !postFound {
+		c.JSON(http.StatusNotFound, gin.H{"message": "Post not found"})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"Message": "Post deleted", "Post": deletedPost})
+
 }
