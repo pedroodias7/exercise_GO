@@ -1,0 +1,38 @@
+{
+    "Name": "Pedro Dias",
+    "Job": "DevOps Cloud Engineer",
+    "Email": "pedro.diaspro@outlook.pt",
+    "Website": "diasdidit.eu",
+    "Location": "Porto,Portugal",
+    "Skills": [
+        "Go",
+        "Cloud",
+    ],
+    "Experiences": [
+        {   
+            "Role": "Cloud Engineer",
+            "Company": "Company 1"
+        },
+        {}
+    ],
+    "Education": [
+        "Computer Science in ISTEC - PORTO",
+        "",
+    ],
+    "Laguages": [
+        "Portuguese",
+        "English",
+        "German"
+    ]
+    
+}
+
+
+
+{}
+{}
+{}
+{}
+{}
+{}
+{}
